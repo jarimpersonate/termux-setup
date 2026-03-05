@@ -1,0 +1,47 @@
+# Simpan video ke penyimpanan android
+-P /sdcard/Videos -o "%(uploader)s/%(title)s.%(ext)s"
+
+# Batasi nama file hanya pada karakter ASCII,
+# hindari karakter khusus seperti "&" dan spasi dalam nama file.
+--restrict-filenames
+
+# Prioritas Kualitas & Format
+# Mencari audio bahasa Indonesia, kalau tidak ada baru ambil audio terbaik (default)
+-f "bestvideo[vcodec^=avc1]+(bestaudio[acodec^=mp4a][language=id]/bestaudio)+best/best"
+-S "lang:id,vcodec:h264,quality,fps,hdr:12,acodec:aac"
+
+# Subtitle untuk video
+-o "subtitle:%(uploader)s/subtitles/%(title)s.%(ext)s"
+--write-subs
+--sub-langs "id"
+--sub-format "srt/best"
+
+# Metadata & Embed
+--embed-metadata
+--embed-thumbnail
+--embed-subs
+--embed-chapters
+
+# Anti-Bot Detection
+--sleep-subtitles 5
+--sleep-requests 1.5
+--sleep-interval 10
+--max-sleep-interval 20
+
+# Gunakan cookies langsung dari browser di Termux (ganti dan sesuaikan bagian profile 'firefox:...-default')
+--cookies-from-browser "firefox:9ddffenl.default-default"
+
+# Alias untuk download MP3 kualitas tinggi
+--alias mp3 "-x --audio-format mp3 --audio-quality 0 --remux-video mp3"
+
+# Alias untuk download MP4 dengan resolusi 1080p
+--alias video-1080p "-S res:1080,lang:id,vcodec:h264,quality,fps,hdr:12,acodec:aac --merge-output-format mp4 --remux-video mp4"
+
+# Alias untuk download MP4 dengan resolusi 720p
+--alias video-720p "-S res:720,lang:id,vcodec:h264,quality,fps,hdr:12,acodec:aac --merge-output-format mp4 --remux-video mp4"
+
+# Alias untuk download MP4 dengan resolusi 480
+--alias video-480p "-S res:480,lang:id,vcodec:h264,quality,fps,hdr:12,acodec:aac --merge-output-format mp4 --remux-video mp4"
+
+# Alias untuk download MP4 dengan resolusi 360p
+--alias video-360p "-S res:360,lang:id,vcodec:h264,quality,fps,hdr:12,acodec:aac --merge-output-format mp4 --remux-video mp4"

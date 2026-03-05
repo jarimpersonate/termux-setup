@@ -1,0 +1,36 @@
+# Jalankan perintah 'man nanorc' untuk informasi detail tentang cara mengkonfigurasi berkas ini
+
+# Penyorotan sintaks berdasarkan jenis file
+include "/data/data/com.termux/files/usr/share/nano/*nanorc"
+
+# Konfigurasi Tampilan dan Fungsi
+set autoindent
+set casesensitive
+set linenumbers
+set matchbrackets "(<[{)>]}"
+set multibuffer
+set mouse
+set smarthome
+set tabsize 4
+
+# Konfigurasi merubah pengikatan kunci tombol (main)
+bind ^A mark main
+bind ^C copy main
+bind ^E execute main
+bind ^O insert main
+bind ^P location main
+bind ^R replace main
+bind ^T gotoline main
+bind ^V paste main
+bind ^W writeout main
+bind ^X cut main
+bind ^Y redo main
+bind ^Z undo main
+bind ^/ comment main
+bind ^Space complete main
+
+# Konfigurasi merubah pengikatan kunci tombol (all)
+bind ^N help all
+bind ^Q exit all
+bind ^S savefile all
+bind M-Space suspend all
