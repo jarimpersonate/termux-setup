@@ -29,7 +29,7 @@
 --max-sleep-interval 20
 
 # Gunakan cookies langsung dari browser di Termux (ganti dan sesuaikan bagian profile 'firefox:...-default')
---cookies-from-browser "firefox:9ddffenl.default-default"
+#--cookies-from-browser "firefox:9ddffenl.default-default"
 
 # Alias untuk download MP3 kualitas tinggi
 --alias mp3 "-x --audio-format mp3 --audio-quality 0 --remux-video mp3"
