@@ -2,7 +2,7 @@
 USER_NAME="$(whoami)"
 
 # Prompt PS1
-PS1='\[\e[1;35m\]'"${USER_NAME}"'@\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[1;33m\]$\[\e[0m\] '
+PS1='\[\e[1;32m\]'"${USER_NAME}"'@\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[1;33m\]$\[\e[0m\] '
 
 # Format waktu untuk perintah history
 HISTTIMEFORMAT="%F %T "
